@@ -1,0 +1,23 @@
+system:
+  device: "cuda"
+  precision: "fp16"
+  log_level: "INFO"
+
+ingestion:
+  queue_size: 100
+  time_sync_tolerance_ms: 15.0
+
+perception:
+  model_name: "mask2former_resnet50"
+  confidence_threshold: 0.85
+
+slam:
+  use_gtsam: true
+
+safety:
+  epistemic_uncertainty_threshold: 0.35
+  aleatoric_uncertainty_threshold: 0.40
+
+backend:
+  host: "0.0.0.0"
+  port: 8000
